@@ -12,15 +12,22 @@ class MyHomePage extends StatelessWidget {
         title: const Text('STREET VICES'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProductosP()),
-            );
-          },
-          child: const Text('Ir a comprar'),
-        ),
+        child: Column(
+          children: [
+            SizedBox(height: 25),
+            Image.network('https://img.freepik.com/foto-gratis/tienda-ropa-tienda-ropa-perchas-tienda-boutique-moderna_1150-8886.jpg', height: 200,),
+            SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProductosP()),
+                );
+              },
+              child: const Text('Ir a comprar'),
+            ),
+          ],
+        )
       ),
     );
   }

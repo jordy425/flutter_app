@@ -18,7 +18,7 @@ class _ProductosPState extends State<ProductosP> {
   final _ctrlCantidad = TextEditingController();
   final _ctrlPrecio = TextEditingController();
 
-  List<Product> _productos = [];
+  List<Productos> _productos = [];
 
   void _agregarProducto() {
     if (_formKey.currentState!.validate()) {
@@ -27,7 +27,7 @@ class _ProductosPState extends State<ProductosP> {
       final precio = double.parse(_ctrlPrecio.text);
 
       setState(() {
-        _productos.add(Product(nombre: nombre, cantidad: cantidad, precio: precio));
+        _productos.add(Productos(nombre: nombre, cantidad: cantidad, precio: precio));
       });
 
       _ctrlNombre.clear();
@@ -40,7 +40,7 @@ class _ProductosPState extends State<ProductosP> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Formulario de Pedido'),
+        title: const Text('Formulario de producto'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -5,7 +5,7 @@ import 'model_producto.dart';
 import 'db_helper.dart';
 
 class Carrito extends StatelessWidget {
-  final List<Product> productos;
+  final List<Productos> productos;
 
   const Carrito({Key? key, required this.productos}) : super(key: key);
 
@@ -33,7 +33,7 @@ class Carrito extends StatelessWidget {
 
     Navigator.popUntil(context, ModalRoute.withName(Navigator.defaultRouteName));
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Pedido finalizado')),
+      const SnackBar(content: Text('Compra realizada')),
     );
   }
 
@@ -41,7 +41,7 @@ class Carrito extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pedido'),
+        title: const Text('Compra'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -49,7 +49,7 @@ class Carrito extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Productos Registrados:',
+              'Productos en carrito:',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -84,7 +84,7 @@ class Carrito extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () => _finalizarPedido(context),
-              child: const Text('Finalizar Pedido'),
+              child: const Text('Comprar'),
             ),
           ],
         ),
