@@ -103,13 +103,13 @@ class _ProductosPState extends State<ProductosP> {
                       },
                     );
                   }
-
+                  // ignore: use_build_context_synchronously
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Carrito(productos: _productos)),
                   );
                 },
-                child: const Text('Ver Pedido'),
+                child: const Text('Ver Carrito'),
               ),
             ],
           ),
